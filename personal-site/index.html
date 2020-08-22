@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link rel='preload' as='style' href='https://fonts.googleapis.com/css?family=Work+Sans|Roboto:wght@300&display=swap'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Work+Sans|Roboto:wght@700&display=swap'>
+
+        <script src="https://kit.fontawesome.com/32efe27772.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <section id="home">
+            <main>
+                <h1 class="biohead">Sean Huggins</h1>
+                <p class="biotext">Hi! I'm Sean. I'm a software developer based in Vancouver, Canada. 
+                    <br>
+                    <br>
+                    I enjoy 
+                    <span>coding</span>, 
+                    <span>hiking</span>, 
+                    <span>cooking</span>, 
+                    <span>reading</span>, 
+                    <span>gardening</span>, 
+                    <span>skateboarding</span>, 
+                    <span>travelling</span>,
+                    <span>planting trees</span>,
+                    <span>playing the drums</span>,
+                    <span>music production</span>,
+                    and much more.
+                    <br>
+                    A few of my favorite projects that I've built include
+                    <span>Making Paper</span>,
+                    <span>MicroSight</span>,
+                    and
+                    <span>Beat Beacons</span>.
+                    <br>
+                    <br>
+                    I am currently looking for work in Vancouver!  
+                </p>
+            </main> 
+            <nav role="navigation">
+                <div onclick="document.getElementById('projects').scrollIntoView(true)">
+                    Projects
+                </div>
+                <div>
+                    Blog
+                </div>
+                <div onclick="document.getElementById('contact').scrollIntoView(true)">
+                    Contact
+                </div>
+            </nav>
+
+        </section>
+        <section id="projects">
+            <h1 class="projects-head">Projects</h1>
+            <div class="projects">
+                <div><h3>Making Paper</h3></div>
+                <div><h3>MicroSight</h3></div>
+                <div><h3>Meet Your Beat</h3></div>
+                <div><h3>BHA Architecture CAD Tools</h3></div>
+                <div><h3>UWO Meteor Physics Lab</h3></div>
+                <div><h3>Artisan Crobbulan</h3></div>
+                <div><h3>BHA Architects Website</h3></div>
+                <div><h3>Cellular Automata Playground</h3></div>
+                <div><h3>QStamp</h3></div>
+                <div><h3>TourMap</h3></div>
+                <div><h3>Backyard Camping!</h3></div>
+                <div><h3>SankeyBudget</h3></div>
+            </div>
+
+            <!-- <div id="makingpaper" class="container project-info">
+                <article>
+                    
+                    <h5>Game Dev -  C++, SDL2</h4>
+                    <h4>Making Paper</h4>
+                    <p>Making paper is a tree planting game. You play as bushman, the heroic planter on a quest to sequester carbon emissions. <br> 
+                        On the way he faces perilous challenges. Vicious bears, falling trees, pits of fiery stinging nettle, even swarms of black flies. <br>
+                        But Bushman is determined to overcome it all, with the ultimate goal of Making Paper.</p>
+                    
+                </article>
+            </div> -->
+
+        </section>
+        <section id="project-info">
+            <div id="project-info-content">
+                <div class = "closedrawer" onclick="closeDrawer()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <h5>Game Dev - C++, SDL2</h5>
+                <h4>Making Paper</h2>
+                <!-- <video id="video-bearfight" controls>
+                    <source src="media/bearfight.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                </video> -->
+            </div>
+        </section>
+        <section id="contact">
+            <h2>About</h2>
+        </section>
+        <script>
+            mp.onclick = function() {
+                elem = document.getElementById('project-info-content');
+                elem.style.opacity = '1';
+
+                elem = document.getElementById('project-info');
+                elem.style.display = 'block';
+                
+                elem.scrollIntoView(true);
+            }
+            function closeDrawer() {
+                elem = document.getElementById('projects');
+                elem.scrollIntoView(true);
+
+                elem = document.getElementById('project-info-content');
+                elem.style.opacity = '0';
+
+                elem = document.getElementById('video-bearfight');
+                pauseVideo(elem);
+
+
+                elem = document.getElementById('project-info');
+                setTimeout(() => elem.style.display = 'none', 750); 
+            }
+
+            function playPause(videoElem) {
+                if (!videoElem) return;
+                if (videoElem.paused) {
+                    videoElem.play();
+                } else {
+                    videoElem.pause();
+                }
+            }
+            function pauseVideo(videoElem) {
+                if (!videoElem) return;
+                if (!videoElem.paused) {
+                    videoElem.pause();
+                }
+            }
+
+            document.onselect = function () {
+                return false;
+            }
+            var onresize = function() 
+            {
+            var width = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+            console.log(width);
+            }
+        </script>
+    </body>   
+</html>

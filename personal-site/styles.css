@@ -1,0 +1,225 @@
+/*--------------------------------
+VARIABLES
+--------------------------------*/
+:root {
+    --font-body: 'Work Sans', sans-serif;
+    --font-ui: 'Roboto', sans-serif;
+    --spacing-s: 20px;
+    --spacing-l: 32px;
+    --spacing-xxl: calc(5vw); /*Magic number*/
+}
+
+/*--------------------------------
+COLORS
+--------------------------------*/
+ html {
+    --color-bg-home: #fffafa;
+    --color-bg-projects: #FBF6F6;
+    --color-bg-contact: #f3efef;
+}
+/* Dark Mode */
+
+
+/*--------------------------------
+FONTS
+--------------------------------*/
+:root {
+    --font-default: 10px;
+    --font-xs: 16px;
+    --font-s: 20px;
+    --font-m: 30px;
+    --font-l: 40px;
+    --font-xl: 60px;
+    --font-xxl: 80px;
+    --font-xxxl: 160px;
+    --font-line-height: 40px;
+}
+
+    /*remove defaults*/
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+* { box-sizing: border-box; }
+
+html {
+    font-family: var(--font-body);
+    font-size: var(--font-default);
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/*--------------------------------
+SECTIONS
+--------------------------------*/
+body > section {
+    flex: 1;
+    min-height: 100vh;
+    padding: var(--spacing-xxl);
+    width: 100%;
+}
+#home {
+    background-color: var(--color-bg-home);  
+    padding-top: var(--spacing-xxl)
+}
+#projects{
+    background-color: var(--color-bg-projects);
+}
+#project-info{
+    background-color: var(--color-bg-projects);
+    display: none;  /*hide project info initially*/
+}
+#contact{
+    background-color: var(--color-bg-contact);
+}
+#project-info-content {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+#about{
+    background-color:white;
+}
+
+/*--------------------------------
+TYPOGRAPHY
+--------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 400;
+}
+
+h1.biohead {
+    font-size: 6rem;
+    margin-bottom: var(--spacing-s);
+    line-height: 0.9em;
+}
+
+p.biotext {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    line-height: 1.4em;
+}
+
+p.biotext span {
+    text-decoration: underline;
+}
+
+nav div {
+    font-size: 3rem;
+}
+
+h1.projects-head {
+    font-size: 6rem;
+}
+
+
+
+
+
+
+
+/*--------------------------------
+ANIMATIONS, FEEDBACK
+--------------------------------*/
+nav div {
+    transition: font-size .2s ease-in-out;
+}
+nav div:hover {
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+
+
+
+/*--------------------------------
+HOME
+--------------------------------*/
+main {
+    border-left: 4px solid black;
+    padding: 0 var(--spacing-s) var(--spacing-s) var(--spacing-s);
+}
+
+
+/*
+
+
+p {
+    margin: 0px;
+    line-height: 1.4em;
+    margin-top: 30px;
+}
+
+
+
+.closedrawer{
+    float: right;
+    padding: 20px;
+}
+.closedrawer:hover{
+    transition: all 200ms ease-in-out;
+    transform: scale(1.1);
+}
+.projects{
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    transition: flex 600ms ease-in;
+}
+
+a {
+    color: black;
+}
+
+.projectbox {
+    background-color: rgb(255, 242, 242);
+    border: solid 5px black;
+    width: auto;
+    padding: 20px;
+    transition: all .2s ease-in-out;
+    margin: 5px;
+}
+
+.projectbox:hover {
+    background-color: white;
+    cursor: pointer;
+    transform: scale(1.02);
+    
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;   
+    margin-top: 10px;
+    transition: all .2s ease-in;
+}
+
+
+
+
+.navbox {
+    flex: 1;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: left;
+    width: 300px;
+    color: black;
+    font-weight: 600;
+    transition: all .2s ease-in-out;
+}
+.navbox:hover {
+    cursor: pointer;
+}
+
+.customcursor{
+    cursor: grab, auto;
+} */
