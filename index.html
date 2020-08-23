@@ -11,6 +11,7 @@
         <script src="https://kit.fontawesome.com/32efe27772.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        
         <section id="home">
             <main>
                 <h1 class="biohead">Sean Huggins</h1>
@@ -56,50 +57,83 @@
         <section id="projects">
             <h1 class="projects-head">Projects</h1>
             <div class="projects">
-                <div><h3>Making Paper</h3></div>
-                <div><h3>MicroSight</h3></div>
-                <div><h3>Meet Your Beat</h3></div>
-                <div><h3>BHA Architecture CAD Tools</h3></div>
-                <div><h3>UWO Meteor Physics Lab</h3></div>
-                <div><h3>Artisan Crobbulan</h3></div>
-                <div><h3>BHA Architects Website</h3></div>
-                <div><h3>Cellular Automata Playground</h3></div>
-                <div><h3>QStamp</h3></div>
-                <div><h3>TourMap</h3></div>
-                <div><h3>Backyard Camping!</h3></div>
-                <div><h3>SankeyBudget</h3></div>
+                <div id="mp"><h1>Making Paper</h1></div>
+                <div><h1>MicroSight</h1></div>
+                <div><h1>Meet Your Beat</h1></div>
+                <div><h1>BHA Architecture CAD Tools</h1></div>
+                <div><h1>UWO Meteor Physics Lab</h1></div>
+                <div><h1>Artisan Crobbulan</h1></div>
+                <div><h1>BHA Architects Website</h1></div>
+                <div><h1>QStamp</h1></div>
+                <div><h1>TourMap</h1></div>
+                <div><h1>Backyard Camping!</h1></div>
+                <div><h1>SankeyBudget</h1></div>
             </div>
-
-            <!-- <div id="makingpaper" class="container project-info">
-                <article>
-                    
-                    <h5>Game Dev -  C++, SDL2</h4>
-                    <h4>Making Paper</h4>
-                    <p>Making paper is a tree planting game. You play as bushman, the heroic planter on a quest to sequester carbon emissions. <br> 
-                        On the way he faces perilous challenges. Vicious bears, falling trees, pits of fiery stinging nettle, even swarms of black flies. <br>
-                        But Bushman is determined to overcome it all, with the ultimate goal of Making Paper.</p>
-                    
-                </article>
-            </div> -->
-
         </section>
         <section id="project-info">
             <div id="project-info-content">
                 <div class = "closedrawer" onclick="closeDrawer()">
                     <i class="fas fa-times"></i>
                 </div>
-                <h5>Game Dev - C++, SDL2</h5>
-                <h4>Making Paper</h2>
-                <!-- <video id="video-bearfight" controls>
+                <h2>Game Dev - C++, SDL2</h2>
+                <h1>Making Paper</h1>
+                <div class="project-description">
+                    <p>     <span style="font-style: italic">Making Paper</span> 
+                        is a tree planting game that I built as my final project for my 4th year Game Design course at Western.
+                    </p>
+                </div>
+                <div id="animMan">
+
+                </div>
+                <div class="project-description">
+                    <p>
+                        In <span style="font-style: italic">Making Paper</span> you play as the heroic "Bushman", on a quest to sequester
+                        the world's increasing carbon emissions.
+                    </p>
+                </div>
+<!-- 
+                <img class="pop-image" src="media/Bushman.png"> -->
+
+                <div class="quote-box">
+                    <p class="quote">"Of the games I've reviewed for this course, I would undoubtedly say yours is the most professional."</p>
+                    <p class="quote-signature">-Mathias B. (my TA)</p>
+                </div>
+                <!-- <div class="quote-box">
+                    <p class="quote">"This game is pretty fun"</p>
+                    <p class="quote-signature">-my Mom</p>
+                </div> -->
+                <video id="video-bearfight" controls>
                     <source src="media/bearfight.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                </video> -->
+                </video>
+                
+
+
+                
+
+
             </div>
         </section>
         <section id="contact">
-            <h2>About</h2>
+            <h1 class="about-head">About</h1>
         </section>
+        <!-- <header class="header"><h1>Sean Huggins</h1></header> -->
         <script>
+            animMan.addEventListener('pointerover', toggleAnimateMan);
+            animMan.addEventListener('pointerleave', toggleAnimateMan);
+
+            let animated = false;
+            function toggleAnimateMan() {
+                animated = !animated;
+            }
+
+            function animateMan() {
+                let bgPosXprev = window.getComputedStyle(animMan).getPropertyValue('background-position-x');
+                let bgPosXnew = (parseInt(bgPosXprev, 10) + parseInt("136px", 10)) % 1088 + "px";
+                animMan.style.backgroundPositionX = `${bgPosXnew}`;
+            }
+            
+
             mp.onclick = function() {
                 elem = document.getElementById('project-info-content');
                 elem.style.opacity = '1';
@@ -139,16 +173,15 @@
                 }
             }
 
-            document.onselect = function () {
-                return false;
+
+            function runEventLoop() {
+                setTimeout(runEventLoop, 100);
+                if (animated) {
+                    animateMan();
+                }
             }
-            var onresize = function() 
-            {
-            var width = window.innerWidth
-            || document.documentElement.clientWidth
-            || document.body.clientWidth;
-            console.log(width);
-            }
+
+            runEventLoop();
         </script>
     </body>   
 </html>

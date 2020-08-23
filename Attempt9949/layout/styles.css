@@ -4,7 +4,6 @@ VARIABLES
 :root {
     --font-body: 'Work Sans', sans-serif;
     --font-ui: 'Roboto', sans-serif;
-    --spacing-xs: 10px;
     --spacing-s: 20px;
     --spacing-l: 32px;
     --spacing-xxl: calc(5vw); /*Magic number*/
@@ -17,9 +16,6 @@ COLORS
     --color-bg-home: #fffafa;
     --color-bg-projects: #FBF6F6;
     --color-bg-contact: #f3efef;
-    --color-text-heavy: rgba(0, 0, 0, 0.8);
-    --color-text-med: rgba(0, 0, 0, 0.75);
-    --color-text-light: rgba(0, 0, 0, 0.6);
 }
 /* Dark Mode */
 
@@ -41,7 +37,7 @@ FONTS
 
     /*remove defaults*/
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -56,7 +52,6 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    width: fit-content;
 }
 
 /*--------------------------------
@@ -66,10 +61,7 @@ body > section {
     flex: 1;
     min-height: 100vh;
     padding: var(--spacing-xxl);
-    height: 1px;
-    width: 100vw;
-    min-width: 100%;
-
+    width: 100%;
 }
 #home {
     background-color: var(--color-bg-home);  
@@ -99,63 +91,32 @@ TYPOGRAPHY
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-weight: 400;
-    color: var(--color-text-heavy);
-    display: flex;
 }
-p {
-    color: var(--color-text-med);
-    font-size: 1.8rem;
-    line-height: 1.3em;
-    font-family: var(--font-body);
-}
-/*home*/
+
 h1.biohead {
     font-size: 6rem;
     margin-bottom: var(--spacing-s);
     line-height: 0.9em;
-    
+}
+
+p.biotext {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    line-height: 1.4em;
 }
 
 p.biotext span {
-    color: var(--color-text-heavy);
     text-decoration: underline;
-    text-decoration-color: #B19C9C; 
 }
-nav div {
-    font-size: 3.5rem;
-    color: var(--color-text-heavy)
 
+nav div {
+    font-size: 3rem;
 }
-/*projects*/
+
 h1.projects-head {
     font-size: 6rem;
-    font-weight: 400;
-    margin-bottom: var(--spacing-xs);
-    text-decoration: underline;
-}
-h1.about-head {
-    font-size: 6rem;
-    font-weight: 400;
-    margin-bottom: var(--spacing-xs);
-    text-decoration: underline;
 }
 
-.projects > div > h1 {
-    font-size: 2.2rem;
-    font-weight: 400;
-}
-
-/*project-info*/
-#project-info-content h1 {
-    font-size: 4rem;
-    text-decoration: underline;
-    margin-bottom: var(--spacing-s);
-}
-#project-info-content h2 {
-    font-size: 2rem;
-}
-#project-info-content p {
-} 
 
 
 
@@ -175,105 +136,40 @@ nav div:hover {
 
 
 
-/*--------------------------------
-HEADER
---------------------------------*/
-.header {
-    background-color: white;
-    border-bottom: solid 4px var(--color-text-med);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 30px;
-    padding: 3px;
-}
-.header h1 {
-    font-size: 1.8rem;
-}
 
 /*--------------------------------
 HOME
 --------------------------------*/
 main {
-    border-left: 4px solid var(--color-text-med);
+    border-left: 4px solid black;
     padding: 0 var(--spacing-s) var(--spacing-s) var(--spacing-s);
 }
+
 
 /*--------------------------------
 PROJECTS
 --------------------------------*/
-.projects {
-    display: flex;
-    flex-flow: row wrap;
-}
-.projects > div {
-    background-color: snow;
-    border: solid 2px var(--color-text-med);
-    transition: all .1s ease-in-out;
-    padding: 6px;
-    margin: 3px;
-    
+.projectbox {
+    background-color: rgb(255, 242, 242);
+    border: solid 5px black;
+    width: auto;
+    padding: 20px;
+    transition: all .2s ease-in-out;
+    margin: 5px;
 }
 
-.projects > div:hover {
+.projectbox:hover {
+    background-color: white;
     cursor: pointer;
     transform: scale(1.02);
-    box-shadow: 0px 0px 10px 1px var(--color-text-light);
-
-}
-
-/*--------------------------------
-PROJECT-INFO
---------------------------------*/
-.fa-times {
-    font-size: 3rem;
-    float: right;
-}
-#video-bearfight {
-    width: 100%;
-    height: auto;
-    box-shadow: 0px 0px 10px 1px var(--color-text-light);
-}
-#video-bearfight:focus {
-    outline: none;
-}
-.pop-image {
-    filter: drop-shadow(4px 4px 10px var(--color-text-light));
-    margin: 0 auto;
-}
-
-.quote-box {
-    margin: var(--spacing-s) 0px;
-    padding-left: var(--spacing-s);
-    display: block;
-    border-left: solid 4px #B19C9C;
-    width: fit-content;
-    max-width: 500px;
-    color: var(--color-text-light);
-}
-.quote {
-    font-size: 1.8rem;
-    font-style: italic;
     
 }
-.quote-signature {
-    font-size: 1.8rem; 
-    text-indent: 30px;
-}
-.project-description {
-    margin-bottom: var(--spacing-s);
-    max-width: 500px;
-}
-#animMan {
-    background-image: url('media/BushmanAnims.png');
-    background-position: 0 0;
-    width: 136px;
-    height: 256px;
-    filter: drop-shadow(4px 4px 10px var(--color-text-light));
-    float: right;
-}
+
+
 
 /*
+
+
 p {
     margin: 0px;
     line-height: 1.4em;
@@ -301,9 +197,9 @@ p {
 a {
     color: black;
 }
+*/
 
-
-
+/*
 nav {
     display: flex;
     flex-direction: column;
